@@ -25,9 +25,8 @@ public class TC01 {
   }
   @BeforeTest
   public void beforeTest() {
-	  /*System.setProperty("webdriver.chrome.driver", propReader.getChromeDriverPath());
-	  driver = new ChromeDriver();*/
-	  driver = new FirefoxDriver();
+	  System.setProperty("webdriver.chrome.driver", propReader.getChromeDriverPath());
+	  driver = new ChromeDriver();
 	  baseUrl = propReader.getRoomManagerAdminURL();
 	  driver.manage().window().maximize();
   }

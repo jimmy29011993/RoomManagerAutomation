@@ -1,9 +1,9 @@
 package org.roommanager.pages.admin.home;
 
 import org.openqa.selenium.WebDriver;
-import org.roommanager.pages.admin.common.AdminMenu;
+import org.roommanager.pages.admin.common.MenuPage;
 
-public class HomePage extends AdminMenu{
+public class HomePage extends MenuPage{
 	WebDriver driver;
 	
 	public HomePage(WebDriver driver){

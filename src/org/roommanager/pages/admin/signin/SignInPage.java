@@ -8,14 +8,14 @@ import org.roommanager.pages.admin.home.HomePage;
 public class SignInPage {
 	WebDriver driver;
 	
-	By loginButton = By.xpath("//button");
+	By signInButton = SignIn.SIGN_IN_BUTTON.value;
 	
 	public SignInPage(WebDriver driver){
 		this.driver = driver;
 	}
 	
 	public HomePage clickSignInButton(){
-		driver.findElement(loginButton).click();
+		driver.findElement(signInButton).click();
 		return new HomePage(driver);
 	}
 }

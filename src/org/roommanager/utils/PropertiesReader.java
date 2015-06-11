@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 public class PropertiesReader {
-	Properties prop = new Properties();
-	InputStream input = null;
-	public PropertiesReader(){
+	
+	private static Properties properties = new Properties();
+	private static InputStream input = null;
+	
+	private static Properties getProperties(){
 		try {
-			input = new FileInputStream("config.properties");
-			prop.load(input);
+			input = new FileInputStream("resources/config.properties");
+			properties.load(input);
 	 
 		} catch (IOException ex) {
 			ex.printStackTrace();
@@ -23,20 +25,22 @@ public class PropertiesReader {
 				}
 			}
 		}
+		return properties;
 	}
-	public String getRoomManagerAdminURL(){
-		return prop.getProperty("ROOM_MANAGER_ADMIN_URL");
+	
+	public static String getRoomManagerAdminURL(){
+		return getProperties().getProperty("ROOM_MANAGER_ADMIN_URL");
 	}
-	public String getUsername(){
-		return prop.getProperty("EXCHANGE_USERNAME");
+	public static String getUsername(){
+		return getProperties().getProperty("EXCHANGE_USERNAME");
 	}
-	public String getHostname(){
-		return prop.getProperty("EXCHANGE_HOSTNAME");
+	public static String getHostname(){
+		return getProperties().getProperty("EXCHANGE_HOSTNAME");
 	}
-	public String getPassword(){
-		return prop.getProperty("EXCHANGE_PASSWORD");
+	public static String getPassword(){
+		return getProperties().getProperty("EXCHANGE_PASSWORD");
 	}
-	public String getChromeDriverPath(){
-		return prop.getProperty("CHROME_DRIVER_PATH");
+	public static String getChromeDriverPath(){
+		return getProperties().getProperty("CHROME_DRIVER_PATH");
 	}
   }

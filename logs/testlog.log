@@ -1,0 +1,15 @@
+2015-06-12 18:39:06,565 - org.roommanager.utils.LogManager -INFO - ******************    Register an Email Service     ******************
+2015-06-12 18:39:10,456 - org.roommanager.utils.LogManager -INFO - Sign In Room Manager App
+2015-06-12 18:39:10,714 - org.roommanager.utils.LogManager -INFO - Sign In Room Manager App
+2015-06-12 18:39:10,729 - org.roommanager.utils.LogManager -INFO - Click on Email Servers link
+2015-06-12 18:39:11,383 - org.roommanager.utils.LogManager -INFO - Click on Remove button
+2015-06-12 18:39:12,114 - org.roommanager.utils.LogManager -INFO - Click on Yes button
+2015-06-12 18:39:12,888 - org.roommanager.utils.LogManager -INFO - ******************    Register an Email Service     ******************
+2015-06-12 18:39:13,603 - org.roommanager.utils.LogManager -INFO - Sign In Room Manager App
+2015-06-12 18:39:13,820 - org.roommanager.utils.LogManager -INFO - Sign In Room Manager App
+2015-06-12 18:39:13,836 - org.roommanager.utils.LogManager -INFO - Click on Email Servers link
+2015-06-12 18:39:14,535 - org.roommanager.utils.LogManager -INFO - Click on Add button
+2015-06-12 18:39:14,906 - org.roommanager.utils.LogManager -INFO - Set Hostname text-box
+2015-06-12 18:39:15,839 - org.roommanager.utils.LogManager -INFO - Set Username text-box
+2015-06-12 18:39:16,283 - org.roommanager.utils.LogManager -INFO - Set Password text-box
+2015-06-12 18:39:16,627 - org.roommanager.utils.LogManager -INFO - Click on Save button

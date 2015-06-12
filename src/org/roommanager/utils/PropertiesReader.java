@@ -43,4 +43,7 @@ public class PropertiesReader {
 	public static String getChromeDriverPath(){
 		return getProperties().getProperty("CHROME_DRIVER_PATH");
 	}
+	public static String getRoomManagerBaseURL(){
+		return getProperties().getProperty("ROOM_MANAGER_BASE_URL");
+	}
   }

@@ -1,15 +1,169 @@
-2015-06-12 18:39:06,565 [main] INFO org.roommanager.utils.LogManager - ******************    Register an Email Service     ******************
-2015-06-12 18:39:10,456 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
-2015-06-12 18:39:10,714 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
-2015-06-12 18:39:10,729 [main] INFO org.roommanager.utils.LogManager - Click on Email Servers link
-2015-06-12 18:39:11,383 [main] INFO org.roommanager.utils.LogManager - Click on Remove button
-2015-06-12 18:39:12,114 [main] INFO org.roommanager.utils.LogManager - Click on Yes button
-2015-06-12 18:39:12,888 [main] INFO org.roommanager.utils.LogManager - ******************    Register an Email Service     ******************
-2015-06-12 18:39:13,603 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
-2015-06-12 18:39:13,820 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
-2015-06-12 18:39:13,836 [main] INFO org.roommanager.utils.LogManager - Click on Email Servers link
-2015-06-12 18:39:14,535 [main] INFO org.roommanager.utils.LogManager - Click on Add button
-2015-06-12 18:39:14,906 [main] INFO org.roommanager.utils.LogManager - Set Hostname text-box
-2015-06-12 18:39:15,839 [main] INFO org.roommanager.utils.LogManager - Set Username text-box
-2015-06-12 18:39:16,283 [main] INFO org.roommanager.utils.LogManager - Set Password text-box
-2015-06-12 18:39:16,627 [main] INFO org.roommanager.utils.LogManager - Click on Save button
+2015-06-15 14:24:19,724 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 14:24:31,781 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 14:24:32,784 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 14:24:53,716 [main] ERROR org.roommanager.utils.LogManager - Timed out after 20 seconds waiting for text ('Remove') to be present in element found by By.xpath: //button[2]
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'VDQADEV01-QZCK8', ip: '172.20.200.227', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: cec00c6eaedefaf1f0a2177cc04be82e
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\JIMMYM~1\AppData\Local\Temp\2\scoped_dir4136_31817}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=40.0.2214.111, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]
+2015-06-15 14:27:02,593 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 14:27:05,642 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 14:27:08,120 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 14:27:28,883 [main] ERROR org.roommanager.utils.LogManager - Timed out after 20 seconds waiting for text ('Remove') to be present in element found by By.xpath: //button[2]
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'VDQADEV01-QZCK8', ip: '172.20.200.227', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: 9ec006052c2be8ce22500d1db5cd047d
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\JIMMYM~1\AppData\Local\Temp\2\scoped_dir3528_32165}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=40.0.2214.111, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]
+2015-06-15 14:29:40,813 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 14:29:44,176 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 14:29:46,710 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 14:30:07,607 [main] ERROR org.roommanager.utils.LogManager - Timed out after 20 seconds waiting for text ('Remove') to be present in element found by By.xpath: //button[2]
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'VDQADEV01-QZCK8', ip: '172.20.200.227', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: 0df7d6be1a7d1425219a532d75f890b2
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\JIMMYM~1\AppData\Local\Temp\2\scoped_dir160_30155}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=40.0.2214.111, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]
+2015-06-15 15:13:16,985 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 15:13:26,094 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:13:27,439 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 15:13:48,358 [main] ERROR org.roommanager.utils.LogManager - Timed out after 20 seconds waiting for text ('Remove') to be present in element found by By.xpath: //button[2]
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'VDQADEV01-QZCK8', ip: '172.20.200.227', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: c1b83ec75d4eea4cc04308bd6872150c
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\JIMMYM~1\AppData\Local\Temp\2\scoped_dir4384_18518}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=40.0.2214.111, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]
+2015-06-15 15:18:02,983 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 15:18:06,256 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:18:06,726 [main] ERROR org.roommanager.utils.LogManager - no such element
+  (Session info: chrome=40.0.2214.111)
+  (Driver info: chromedriver=2.14.313457 (3d645c400edf2e2c500566c9aa096063e707c9cf),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 56 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'VDQADEV01-QZCK8', ip: '172.20.200.227', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.7.0_51'
+*** Element info: {Using=xpath, value=//button}
+Session ID: c809e6a959d940171c000d957a49fa8b
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\JIMMYM~1\AppData\Local\Temp\2\scoped_dir3216_21269}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=40.0.2214.111, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]
+2015-06-15 15:19:20,467 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 15:19:24,282 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:19:26,159 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 15:19:46,804 [main] ERROR org.roommanager.utils.LogManager - Timed out after 20 seconds waiting for text ('Remove') to be present in element found by By.xpath: //button[2]
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'VDQADEV01-QZCK8', ip: '172.20.200.227', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: 7d87d569c225d3ddbf4711767f350b7d
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\JIMMYM~1\AppData\Local\Temp\2\scoped_dir3276_19009}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=40.0.2214.111, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]
+2015-06-15 15:28:29,179 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 15:28:41,121 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:28:42,357 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 15:31:07,884 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 15:31:24,558 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:31:26,967 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 15:34:22,898 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 15:34:38,158 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:34:39,725 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 15:35:01,256 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to register an Email Service     ******************
+2015-06-15 15:35:02,634 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 15:35:05,717 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 15:35:06,175 [main] INFO org.roommanager.utils.LogManager - Click on 'Add' button on email servers page
+2015-06-15 15:35:07,960 [main] INFO org.roommanager.utils.LogManager - Set the 'Hostname' text-box: env01001.unit.com
+2015-06-15 15:35:08,835 [main] INFO org.roommanager.utils.LogManager - Set the 'Username' text-box: Administrator
+2015-06-15 15:35:09,482 [main] INFO org.roommanager.utils.LogManager - Set the 'Password' text-box: qadev02**
+2015-06-15 15:35:09,733 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button
+2015-06-15 15:35:25,274 [main] INFO org.roommanager.utils.LogManager - Retrieve the email server
+2015-06-15 15:35:25,534 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:23:57,738 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:24:14,395 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:24:16,589 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:24:17,465 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:24:17,757 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:24:17,806 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:26:18,972 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:26:40,552 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:28:15,701 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:28:37,009 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:28:39,845 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:28:40,121 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:28:40,300 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:28:40,348 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:28:40,586 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:33:56,460 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:34:10,346 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:34:12,390 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:34:13,217 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:34:13,484 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:36:47,037 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:37:02,156 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:37:04,524 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:37:04,999 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:37:05,267 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:37:05,392 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:37:05,603 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:42:36,361 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 18:42:53,201 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:42:55,961 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 18:43:17,314 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to register an Email Service     ******************
+2015-06-15 18:43:18,443 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:43:19,864 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 18:43:20,634 [main] INFO org.roommanager.utils.LogManager - Click on 'Add' button on email servers page
+2015-06-15 18:43:21,930 [main] INFO org.roommanager.utils.LogManager - Set the 'Hostname' text-box: env01001.unit.com
+2015-06-15 18:43:22,708 [main] INFO org.roommanager.utils.LogManager - Set the 'Username' text-box: Administrator
+2015-06-15 18:43:23,208 [main] INFO org.roommanager.utils.LogManager - Set the 'Password' text-box: qadev02**
+2015-06-15 18:43:23,417 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button
+2015-06-15 18:43:49,703 [main] INFO org.roommanager.utils.LogManager - Retrieve the email server
+2015-06-15 18:43:49,786 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:43:49,788 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:43:50,680 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:43:51,645 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:43:51,904 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:43:52,117 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:43:52,707 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:43:52,825 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:48:09,404 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 18:48:12,804 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:48:14,663 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 18:48:15,217 [main] INFO org.roommanager.utils.LogManager - Click on 'Remove' button on email servers page
+2015-06-15 18:48:15,928 [main] INFO org.roommanager.utils.LogManager - Click on 'Yes' button to confirm the operation
+2015-06-15 18:48:16,079 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:48:16,086 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to register an Email Service     ******************
+2015-06-15 18:48:17,124 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:48:18,191 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 18:48:18,637 [main] INFO org.roommanager.utils.LogManager - Click on 'Add' button on email servers page
+2015-06-15 18:48:20,207 [main] INFO org.roommanager.utils.LogManager - Set the 'Hostname' text-box: qa202-5.qa202.local
+2015-06-15 18:48:20,940 [main] INFO org.roommanager.utils.LogManager - Set the 'Username' text-box: Administrator
+2015-06-15 18:48:21,452 [main] INFO org.roommanager.utils.LogManager - Set the 'Password' text-box: Monitor2020
+2015-06-15 18:48:21,650 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button
+2015-06-15 18:48:28,295 [main] INFO org.roommanager.utils.LogManager - Retrieve the email server
+2015-06-15 18:48:29,326 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:48:30,148 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:48:31,201 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:48:31,431 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:48:31,674 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:48:32,241 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:48:32,289 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:51:23,811 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to remove an Email Service     ******************
+2015-06-15 18:51:26,701 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:51:28,318 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 18:51:28,700 [main] INFO org.roommanager.utils.LogManager - Click on 'Remove' button on email servers page
+2015-06-15 18:51:29,520 [main] INFO org.roommanager.utils.LogManager - Click on 'Yes' button to confirm the operation
+2015-06-15 18:51:29,822 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:51:29,827 [main] INFO org.roommanager.utils.LogManager - ******************    Verify that is possible to register an Email Service     ******************
+2015-06-15 18:51:30,633 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:51:31,518 [main] INFO org.roommanager.utils.LogManager - Select 'Email Servers' link on menu
+2015-06-15 18:51:31,776 [main] INFO org.roommanager.utils.LogManager - Click on 'Add' button on email servers page
+2015-06-15 18:51:32,691 [main] INFO org.roommanager.utils.LogManager - Set the 'Hostname' text-box: qa202-5.qa202.local
+2015-06-15 18:51:33,128 [main] INFO org.roommanager.utils.LogManager - Set the 'Username' text-box: Administrator
+2015-06-15 18:51:33,821 [main] INFO org.roommanager.utils.LogManager - Set the 'Password' text-box: Monitor2020
+2015-06-15 18:51:34,055 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button
+2015-06-15 18:51:39,723 [main] INFO org.roommanager.utils.LogManager - Retrieve the email server
+2015-06-15 18:51:39,978 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************
+2015-06-15 18:51:39,980 [main] INFO org.roommanager.utils.LogManager - ******************    Make sure that is possible to impersonate Room Manager     ******************
+2015-06-15 18:51:41,061 [main] INFO org.roommanager.utils.LogManager - Sign In Room Manager App
+2015-06-15 18:51:42,001 [main] INFO org.roommanager.utils.LogManager - Select 'Impersonation' link on menu
+2015-06-15 18:51:44,812 [main] INFO org.roommanager.utils.LogManager - Click on 'Impersonation' checkbox on impersonation page
+2015-06-15 18:51:45,026 [main] INFO org.roommanager.utils.LogManager - Click on 'Save' button on impersonation page
+2015-06-15 18:51:47,684 [main] INFO org.roommanager.utils.LogManager - Retrieve text of confirmation message
+2015-06-15 18:51:47,726 [main] INFO org.roommanager.utils.LogManager - **********************   E N D       ********************

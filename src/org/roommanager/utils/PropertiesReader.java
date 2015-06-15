@@ -46,4 +46,8 @@ public class PropertiesReader {
 	public static String getRoomManagerBaseURL(){
 		return getProperties().getProperty("ROOM_MANAGER_BASE_URL");
 	}
+	
+	public static String getScreenshotPath(){
+		return getProperties().getProperty("SCREENSHOT_PATH");
+	}
   }

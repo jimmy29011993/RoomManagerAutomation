@@ -4,33 +4,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.roommanager.model.admin.emailservers.EmailServers;
+import org.roommanager.model.admin.emailservers.EmailServersModel;
+import org.roommanager.utils.LogManager;
 
 public class EmailServersPage {
 	WebDriver driver;
 	
-	By addButton = EmailServers.ADD_BUTTON.value;
-	By removeButton = EmailServers.REMOVE_BUTTON.value;
-	By serverButton = EmailServers.SERVER_BUTTON.value;
+	By addButton = EmailServersModel.ADD_BUTTON.value;
+	By removeButton = EmailServersModel.REMOVE_BUTTON.value;
+	By serverButton = EmailServersModel.SERVER_BUTTON.value;
 	
 	public EmailServersPage(WebDriver driver){
 		this.driver = driver;
 	}
 	
-	public AddServerForm clickAddButton(){
+	public AddServerPage clickAddButton(){
 		(new WebDriverWait(driver,20)).until(ExpectedConditions.textToBePresentInElement(addButton,"Add"));
 		driver.findElement(addButton).click();
-		return new AddServerForm(driver);
+		LogManager.info("Click on 'Add' button on email servers page");
+		return new AddServerPage(driver);
 	}
 	
-	public ConfirmationMessageWindow clickRemoveButton(){
+	public ConfirmationMessagePage clickRemoveButton(){
 		(new WebDriverWait(driver,20)).until(ExpectedConditions.textToBePresentInElement(removeButton,"Remove"));
 		driver.findElement(removeButton).click();
-		return new ConfirmationMessageWindow(driver);
+		LogManager.info("Click on 'Remove' button on email servers page");
+		return new ConfirmationMessagePage(driver);
 	}	
 	
-	public String getEmailService(){
+	public String getEmailServer(){
 		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(serverButton));
+		LogManager.info("Retrieve the email server");
 	    return driver.findElement(serverButton).getText();
 	}
 	

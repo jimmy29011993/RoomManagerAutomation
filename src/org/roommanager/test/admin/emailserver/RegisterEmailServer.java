@@ -12,7 +12,6 @@ import org.roommanager.utils.api.EmailServerAPI;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
@@ -23,7 +22,6 @@ public class RegisterEmailServer {
   
   @Test
   public void registerEmailServer() {
-	  
 	  LogManager.startTestCase("Verify that is possible to register an Email Service"); 
 	  String expected = PropertiesReader.getHostname() + "\nMicrosoft Exchange Server 2010 SP3";
 	  String errorMessage = "The email server was not registered";  
@@ -41,7 +39,7 @@ public class RegisterEmailServer {
 	  LogManager.endTestCase();
   }
   @BeforeTest
-  public void before(){
+  public void beforeTest(){
 	  EmailServerAPI.removeAllEmailServers();
   }
   @AfterTest
@@ -53,7 +51,7 @@ public class RegisterEmailServer {
   public void beforeSuite() {
 	  driver = SeleniumDriver.chromeDriver();
   }
-
+  
   @AfterSuite
   public void afterSuite() {
 	  driver.quit();

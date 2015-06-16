@@ -13,7 +13,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 public class RemoveEmailServer {
@@ -22,7 +21,6 @@ public class RemoveEmailServer {
   
   @Test
   public void removeEmailServer(){
-	  
 	  LogManager.startTestCase("Verify that is possible to remove an Email Service"); 
 	  String errorMessage = "The email server was not removed";
 	  driver.get(PropertiesReader.getRoomManagerAdminURL());

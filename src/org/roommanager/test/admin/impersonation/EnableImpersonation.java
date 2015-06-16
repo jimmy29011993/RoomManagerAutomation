@@ -9,7 +9,6 @@ import org.roommanager.utils.PropertiesReader;
 import org.roommanager.utils.SeleniumDriver;
 import org.roommanager.utils.api.EmailServerAPI;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;

@@ -12,8 +12,7 @@ public class PropertiesReader {
 	private static Properties getProperties(){
 		try {
 			input = new FileInputStream("resources/config.properties");
-			properties.load(input);
-	 
+			properties.load(input);	 
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		} finally {
@@ -31,6 +30,9 @@ public class PropertiesReader {
 	public static String getRoomManagerAdminURL(){
 		return getProperties().getProperty("ROOM_MANAGER_ADMIN_URL");
 	}
+	public static String getRoomManagerTabletURL(){
+		return getProperties().getProperty("ROOM_MANAGER_TABLET_URL");
+	}
 	public static String getUsername(){
 		return getProperties().getProperty("EXCHANGE_USERNAME");
 	}
@@ -46,8 +48,10 @@ public class PropertiesReader {
 	public static String getRoomManagerBaseURL(){
 		return getProperties().getProperty("ROOM_MANAGER_BASE_URL");
 	}
-	
 	public static String getScreenshotPath(){
 		return getProperties().getProperty("SCREENSHOT_PATH");
+	}
+	public static String getExchangeDomain(){
+		return getProperties().getProperty("EXCHANGE_DOMAIN");
 	}
   }

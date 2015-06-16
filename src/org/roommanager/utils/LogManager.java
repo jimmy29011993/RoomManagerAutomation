@@ -1,18 +1,16 @@
 package org.roommanager.utils;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 public class LogManager {
 
 	private static Logger Log = Logger.getLogger(LogManager.class.getName());
  
 	public static void startTestCase(String sTestCaseName){
-		Log.info("******************    "+sTestCaseName+ "     ******************");
+		Log.info("=> Start Test Case: "+sTestCaseName);
 	}
 
- 
 	public static void endTestCase(){
-		Log.info("**********************   "+"E N D"+"       ********************");
+		Log.info("=> End Test Case");
 	}
  
 	public static void info(String message) {

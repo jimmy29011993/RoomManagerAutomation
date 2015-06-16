@@ -26,45 +26,25 @@ public class TestNGCustom extends TestListenerAdapter {
 	
 	@Override
 	public void onTestFailure(ITestResult tr) {
-		ScreenShot();
+		ScreenShot(tr.getName());
 	}
 	
-	@Override
-	public void onTestSkipped(ITestResult tr) {
-		//ScreenShot();
-	}
-	
-	@Override
-	public void onTestSuccess(ITestResult tr) {
-		//ScreenShot();
-	}
-	
-	private void ScreenShot() {
+	private void ScreenShot(String testName) {
 	try {
 	
 		String NewFileNamePath;
-	
-		//Get the dir path
-		File directory = new File (".");
-		
-		//get current date time with Date() to create unique file name
+		File directory = new File (".");		
 		DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
-		//get current date time with Date()
-		Date date = new Date();
-		
-		//To identify the system
-		InetAddress ownIP=InetAddress.getLocalHost();
-		
-		NewFileNamePath = directory.getCanonicalPath()+ PropertiesReader.getScreenshotPath()+ dateFormat.format(date)+"_"+ownIP.getHostAddress()+ ".png";
-		
-		//Capture the screen shot of the area of the screen defined by the rectangle
+		Date date = new Date();		
+		NewFileNamePath = directory.getCanonicalPath()+ PropertiesReader.getScreenshotPath()+ dateFormat.format(date)+"-"+testName+ ".png";
 		Robot robot = new Robot();
-		BufferedImage bi=robot.createScreenCapture(new Rectangle(1280,1024));
+		BufferedImage bi=robot.createScreenCapture(new Rectangle(1280,768));
 		ImageIO.write(bi, "png", new File(NewFileNamePath));
-		Count++;//Assign each screen shot a number
-		NewFileNamePath = "<a href='"+NewFileNamePath+"'>ScreenShot"+ Count + "</a>";
-		//Place the reference in TestNG web report 
-		Reporter.log(NewFileNamePath);
+		Count++;
+		System.setProperty("org.uncommons.reportng.escape-output", "false");  
+
+		Reporter.log("<a href=\"" + NewFileNamePath + "\"><p align=\"left\">Error screenshot at " + new Date()+ "</p>");
+		Reporter.log("<img src=\"file://" + NewFileNamePath + "\" alt=\"\" height='100' width='100' /><br/>");
 		
 		} 
 		catch (AWTException e) {

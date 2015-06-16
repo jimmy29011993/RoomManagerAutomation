@@ -4,6 +4,7 @@
     <listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="org.roommanager.utils.TestNGCustom"/>
   	</listeners>
    	<test name="Test1">
     	<classes>

@@ -16,7 +16,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({org.roommanager.utils.TestNGCustom.class})
 public class RemoveEmailServer {
 	
   private static WebDriver driver = null;

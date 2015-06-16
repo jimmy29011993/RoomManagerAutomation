@@ -17,6 +17,7 @@ public class EmailServerAPI {
 	private static String servicesURL = PropertiesReader.getRoomManagerBaseURL() + "/services";
 	private static String servicesFilter = "?type=exchange";
 	private static String errorMessage = "Failed : HTTP error code : ";
+	private static String id = "_id";
 	
 	public static String registerEmailServer(String username, String password, String hostname){
 		try {
@@ -37,7 +38,7 @@ public class EmailServerAPI {
 	            throw new RuntimeException(errorMessage + response.getStatus());
 	        }
 	        JSONObject responseJson = (JSONObject) new JSONParser().parse(response.getEntity(String.class));
-	        return (String)responseJson.get("_id");
+	        return (String)responseJson.get(id);
 
 	    } catch (Exception e) {
 	        e.printStackTrace();
@@ -74,7 +75,7 @@ public class EmailServerAPI {
 	            throw new RuntimeException(errorMessage + response.getStatus());
 	        }
 	        JSONObject responseJson = (JSONObject) new JSONParser().parse(response.getEntity(String.class));
-	        return (String)responseJson.get("_id");
+	        return (String)responseJson.get(id);
 	        
 	    } catch (Exception e) {
 	        e.printStackTrace();
@@ -96,7 +97,7 @@ public class EmailServerAPI {
 	        }
 	        JSONArray servicesJson = (JSONArray) new JSONParser().parse(response.getEntity(String.class));
 	        for (int i = 0; i < servicesJson.size(); i++){
-	        	services.add((String)((JSONObject) new JSONParser().parse(servicesJson.get(i).toString())).get("_id"));
+	        	services.add((String)((JSONObject) new JSONParser().parse(servicesJson.get(i).toString())).get(id));
 	        }	
 	        
 	    } catch (Exception e) {
@@ -112,6 +113,7 @@ public class EmailServerAPI {
 		}
 	}
 	
-	public static void main(String[] args){
+	public static boolean existsEmailServer(){
+		return getEmailServers().size() > 0 ? true : false;  
 	}
 }

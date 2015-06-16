@@ -41,15 +41,4 @@ public class SeleniumDriver {
 	public static SeleniumDriver getInstance(){
 		return instance;
 	}
-	
-	public static void takeScreenshot(String sTestCaseName) throws Exception{
-		Date date= new Date();
-		try{
-			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File(PropertiesReader.getScreenshotPath() + date.getTime() + "-" +sTestCaseName +".jpg"));	
-		} catch (Exception e){
-			LogManager.error(e.getMessage());
-			throw new Exception();
-		}
-	}
 }

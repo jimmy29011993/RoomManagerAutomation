@@ -16,7 +16,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-@Listeners({org.roommanager.utils.TestNGCustom.class})
 public class EnableImpersonation {
   private static WebDriver driver = null;
   @Test

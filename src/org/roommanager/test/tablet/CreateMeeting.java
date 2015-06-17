@@ -21,7 +21,7 @@ public class CreateMeeting {
 	
   private static WebDriver driver = null;
   
-  String conferenceRoom = "RoomSM-01";
+  String conferenceRoom = "RoomSM-07";
   String username = PropertiesReader.getUsername();
   String organizer = username;
   String subject = Generator.getRandomString();

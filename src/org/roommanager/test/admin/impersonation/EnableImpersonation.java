@@ -19,7 +19,7 @@ public class EnableImpersonation {
   private static WebDriver driver = null;
   @Test
   public void enableImpersonation() {
-	  LogManager.startTestCase("Make sure that is possible to impersonate Room Manager");
+	  LogManager.startTestCase("Make sure that a confirmation message is displayed after enabling impersonation");
 	  String expected = "Impersonation is now enabled.";
 	  String errorMessage = "Impersonate was not enabled";  
 	  driver.get(PropertiesReader.getRoomManagerAdminURL());

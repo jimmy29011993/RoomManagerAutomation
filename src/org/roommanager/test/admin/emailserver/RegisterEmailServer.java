@@ -22,7 +22,7 @@ public class RegisterEmailServer {
   
   @Test
   public void registerEmailServer() {
-	  LogManager.startTestCase("Verify that is possible to register an Email Service"); 
+	  LogManager.startTestCase("Verify that is possible to register an Email Server after entering valid credentials and hostname"); 
 	  String expected = PropertiesReader.getHostname() + "\nMicrosoft Exchange Server 2010 SP3";
 	  String errorMessage = "The email server was not registered";  
 	  driver.get(PropertiesReader.getRoomManagerAdminURL());

@@ -1,11 +1,15 @@
 package org.roommanager.utils.api;
 
 import java.util.ArrayList;
+
 import javax.ws.rs.core.MediaType;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.roommanager.utils.LogManager;
 import org.roommanager.utils.PropertiesReader;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -24,7 +28,7 @@ public class EmailServerAPI {
 	        ClientResponse response = webResource.path(serviceId).accept(MediaType.APPLICATION_JSON).delete(ClientResponse.class);	        
 	        checkStatus(response.getStatus());	        
 	    } catch (Exception e) {
-	        e.printStackTrace();
+	    	LogManager.error(e.getMessage());
 	    }
 	}
 	
@@ -38,9 +42,13 @@ public class EmailServerAPI {
 	        return (String)responseJson.get(id);
 	        
 	    } catch (Exception e) {
-	        e.printStackTrace();
+	    	LogManager.error(e.getMessage());
 	        return null;
 	    }
+	}
+	
+	public static String getEmailServer(){
+		return getEmailServers().get(0);
 	}
 	
 	public static ArrayList<String> getEmailServers(){
@@ -55,7 +63,7 @@ public class EmailServerAPI {
 	        	services.add((String)((JSONObject) new JSONParser().parse(servicesJson.get(i).toString())).get(id));
 	        }	
 	    } catch (Exception e) {
-	        e.printStackTrace();
+	    	LogManager.error(e.getMessage());
 	    }
 		return services;
 	}
@@ -84,14 +92,14 @@ public class EmailServerAPI {
 	        JSONObject responseJson = (JSONObject) new JSONParser().parse(response.getEntity(String.class));
 	        return (String)responseJson.get(id);
 	    } catch (Exception e) {
-	        e.printStackTrace();
+	    	LogManager.error(e.getMessage());
 	        return null;
 	    }
 	}
 	
 	private static void checkStatus(int status){
 		if (status != 200) {
-            throw new RuntimeException(errorMessage + status);
+			LogManager.error(errorMessage + status);
         }
 	}
 }

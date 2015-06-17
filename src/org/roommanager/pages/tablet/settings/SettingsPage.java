@@ -28,7 +28,7 @@ public class SettingsPage {
 	}
 	
 	public void selectConferenceRoom(){
-		(new WebDriverWait(driver,20)).until(ExpectedConditions.presenceOfElementLocated(conferenceRoom));
+		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(conferenceRoom));
 		driver.findElement(conferenceRoom).click();
 		LogManager.info("Select the conference room");
 	}

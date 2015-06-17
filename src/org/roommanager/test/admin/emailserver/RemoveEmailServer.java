@@ -21,7 +21,7 @@ public class RemoveEmailServer {
   
   @Test
   public void removeEmailServer(){
-	  LogManager.startTestCase("Verify that is possible to remove an Email Service"); 
+	  LogManager.startTestCase("Make sure that is possible to remove a registered Email Server after pressing Remove button"); 
 	  String errorMessage = "The email server was not removed";
 	  driver.get(PropertiesReader.getRoomManagerAdminURL());
 	  

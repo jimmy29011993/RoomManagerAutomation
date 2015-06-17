@@ -54,4 +54,10 @@ public class PropertiesReader {
 	public static String getExchangeDomain(){
 		return getProperties().getProperty("EXCHANGE_DOMAIN");
 	}
+	public static String getFormatDate(){
+		return getProperties().getProperty("FORMAT_OF_DATE");
+	}
+	public static String getDifferenceOfHours(){
+		return getProperties().getProperty("DIFFERENCE_OF_HOURS");
+	}
   }

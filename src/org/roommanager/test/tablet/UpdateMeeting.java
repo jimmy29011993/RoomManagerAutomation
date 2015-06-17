@@ -17,23 +17,29 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-public class CreateMeeting {
-	
+public class UpdateMeeting {
   private static WebDriver driver = null;
-  
+	
   String conferenceRoom = "RoomSM-01";
   String username = PropertiesReader.getUsername();
+  String password = PropertiesReader.getPassword();
   String organizer = username;
   String subject = Generator.getRandomString();
+  String startDate = Generator.getStartDate();
+  String endDate = Generator.getEndDate(30);
+  
+  
+  /*Update*/
+  String newSubject = Generator.getRandomString();
+  String newBody = Generator.getRandomString();
   String attendee = PropertiesReader.getUsername() + "@" + PropertiesReader.getExchangeDomain();
-  String password = PropertiesReader.getPassword();
   
   @Test
-  public void createMeeting() {
-	  LogManager.startTestCase("Make sure that is possible to create a Meeting after entering all Scheduler form required fields");
-	  String errorMessage = "The meeting was not created"; 
-	  String expected = subject;
-	  
+  public void updateSpecificMeeting() {
+	  LogManager.startTestCase("Verify that is possible to update Meeting's data.");
+	  String errorSubject = "The subject was not updated";
+	  String errorBody = "The body was not updated"; 
+	  String errorAttendee = "The attendee was not updated"; 
 	  driver.get(PropertiesReader.getRoomManagerTabletURL());
 	  
 	  SettingsPage settings = new SettingsPage(driver);
@@ -41,21 +47,23 @@ public class CreateMeeting {
 	  settings.selectConferenceRoom();
 	  HomePage home = settings.clickAcceptButton();
 	  SchedulerPage scheduler = home.clickScheduleButton();
-	  scheduler.setOrganizerTextBox(organizer);
-	  scheduler.setSubjectTextBox(subject);
+	  scheduler.clickOnMeetingBox();
+	  scheduler.setSubjectTextBox(newSubject);
 	  scheduler.setAttendeesTextBox(attendee);
-	  CredentialsPage credentials = scheduler.clickCreateButton();
-	  credentials.setUsernameTextBox(username);
+	  scheduler.setBodyTextArea(newBody);
+	  CredentialsPage credentials = scheduler.clickUpdateButton();
 	  credentials.setPasswordTextBox(password);
 	  scheduler = credentials.clickOkButton();
 	  
-	  Assert.assertEquals(scheduler.getSubjectOnMeetingBox(), expected,errorMessage);
+	  Assert.assertEquals(scheduler.getMeetingSubject(), newSubject,errorSubject);
+	  //Assert.assertEquals(scheduler.getMeetingBody(), newBody,errorBody);
+	  Assert.assertEquals(scheduler.getMeetingAttendees(), attendee,errorAttendee);
 	  LogManager.endTestCase();
-	  
   }
   @BeforeTest
   public void beforeTest() {
 	  MeetingsAPI.removeAllMeetingsByRoomName(conferenceRoom, username, password);
+	  MeetingsAPI.createMeeting(conferenceRoom, username, password, organizer, subject, startDate, endDate);
   }
 
   @AfterTest
@@ -67,7 +75,7 @@ public class CreateMeeting {
   public void beforeSuite() {
 	  driver = SeleniumDriver.chromeDriver();
   }
-  
+
   @AfterSuite
   public void afterSuite() {
 	  driver.quit();

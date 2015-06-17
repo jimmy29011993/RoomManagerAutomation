@@ -26,7 +26,7 @@ public class TestNGCustom extends TestListenerAdapter {
 			File directory = new File (".");		
 			DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy_hh_mm_ssaa");
 			Date date = new Date();		
-			filePath = directory.getCanonicalPath()+ PropertiesReader.getScreenshotPath()+ dateFormat.format(date)+"-"+testName+ ".png";
+			filePath = directory.getCanonicalPath()+ PropertiesReader.getScreenshotPath()+ testName + "-" + dateFormat.format(date) + ".png";
 			Robot robot = new Robot();
 			BufferedImage bi=robot.createScreenCapture(new Rectangle(1280,768));
 			ImageIO.write(bi, "png", new File(filePath));

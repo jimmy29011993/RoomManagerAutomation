@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Acceptance-EmailServers" parallel="false">
+    <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="org.roommanager.utils.TestNGCustom"/>
+  	</listeners>
+   	<test name="EmailServers">
+    	<classes>
+    		<class name="org.roommanager.test.admin.emailserver.RemoveEmailServer" />
+	      	<class name="org.roommanager.test.admin.emailserver.RegisterEmailServer" />
+	      	<class name="org.roommanager.test.admin.impersonation.EnableImpersonation" />
+    	</classes>
+  	</test>
+</suite>

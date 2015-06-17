@@ -11,28 +11,27 @@ import org.roommanager.utils.PropertiesReader;
 import org.roommanager.utils.SeleniumDriver;
 import org.roommanager.utils.api.MeetingsAPI;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-public class CreateMeeting {
-	
+public class RemoveMeeting {
   private static WebDriver driver = null;
   
   String conferenceRoom = "RoomSM-01";
   String username = PropertiesReader.getUsername();
+  String password = PropertiesReader.getPassword();
   String organizer = username;
   String subject = Generator.getRandomString();
-  String attendee = PropertiesReader.getUsername() + "@" + PropertiesReader.getExchangeDomain();
-  String password = PropertiesReader.getPassword();
+  String startDate = Generator.getStartDate();
+  String endDate = Generator.getEndDate(30);
   
   @Test
-  public void createMeeting() {
-	  LogManager.startTestCase("Make sure that is possible to create a Meeting after entering all Scheduler form required fields");
-	  String errorMessage = "The meeting was not created"; 
-	  String expected = subject;
+  public void removeSpecificMeeting() { 
+	  LogManager.startTestCase("Verify that is possible to remove a Meeting of a Room after provide valid credentials");
+	  String errorMessage = "The meeting was not removed"; 
 	  
 	  driver.get(PropertiesReader.getRoomManagerTabletURL());
 	  
@@ -41,36 +40,32 @@ public class CreateMeeting {
 	  settings.selectConferenceRoom();
 	  HomePage home = settings.clickAcceptButton();
 	  SchedulerPage scheduler = home.clickScheduleButton();
-	  scheduler.setOrganizerTextBox(organizer);
-	  scheduler.setSubjectTextBox(subject);
-	  scheduler.setAttendeesTextBox(attendee);
-	  CredentialsPage credentials = scheduler.clickCreateButton();
-	  credentials.setUsernameTextBox(username);
+	  scheduler.clickOnMeetingBox();
+	  CredentialsPage credentials = scheduler.clickRemoveButton();
 	  credentials.setPasswordTextBox(password);
 	  scheduler = credentials.clickOkButton();
 	  
-	  Assert.assertEquals(scheduler.getSubjectOnMeetingBox(), expected,errorMessage);
+	  Assert.assertTrue(scheduler.existsMeeting(subject),errorMessage);
 	  LogManager.endTestCase();
-	  
   }
   @BeforeTest
   public void beforeTest() {
 	  MeetingsAPI.removeAllMeetingsByRoomName(conferenceRoom, username, password);
+	  MeetingsAPI.createMeeting(conferenceRoom, username, password, organizer, subject, startDate, endDate);
   }
 
   @AfterTest
-  public void afterTest() {
+  public void afterTest(){
 	  MeetingsAPI.removeAllMeetingsByRoomName(conferenceRoom, username, password);
   }
-
+  
   @BeforeSuite
   public void beforeSuite() {
 	  driver = SeleniumDriver.chromeDriver();
   }
-  
+
   @AfterSuite
   public void afterSuite() {
 	  driver.quit();
   }
-
 }

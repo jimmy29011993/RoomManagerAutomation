@@ -21,6 +21,7 @@ public class CredentialsPage {
 	public void setUsernameTextBox(String username){
 		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(usernameTextBox));
 		driver.findElement(usernameTextBox).clear();
+		driver.findElement(usernameTextBox).clear();
 		driver.findElement(usernameTextBox).sendKeys(username);
 		LogManager.info("Set 'Username' text box: " + username);
 	}
@@ -36,6 +37,7 @@ public class CredentialsPage {
 		(new WebDriverWait(driver,20)).until(ExpectedConditions.presenceOfElementLocated(okButton));
 		driver.findElement(okButton).click();
 		LogManager.info("Click on 'Ok' button");
+		(new WebDriverWait(driver,60)).until(ExpectedConditions.invisibilityOfElementLocated(okButton));
 		return new SchedulerPage(driver);
 	}
 	

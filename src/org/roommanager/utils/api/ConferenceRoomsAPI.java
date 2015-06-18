@@ -16,7 +16,6 @@ import com.sun.jersey.api.client.WebResource;
 
 public class ConferenceRoomsAPI {
 	private static String conferenceRoomsURL = PropertiesReader.getRoomManagerBaseURL() + "/services/[serviceId]/rooms";
-	private static String errorMessage = "Failed : HTTP error code : ";
 	private static String roomDisplayName = "displayName";
 	
 	public static JSONObject getConferenceRoomByName(String roomName,String serviceId){
@@ -27,27 +26,8 @@ public class ConferenceRoomsAPI {
 		}
 		return null;
 	}
-	
 	public static ArrayList<JSONObject> getAllRoomsByServiceId(String serviceId){
-		ArrayList<JSONObject> rooms = new ArrayList<JSONObject>();
-		try {
-			String url = conferenceRoomsURL.replace("[serviceId]", serviceId);
-	        Client client = Client.create();
-	        WebResource webResource = client.resource(url);
-	        ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
-	        checkStatus(response.getStatus());
-	        JSONArray servicesJson = (JSONArray) new JSONParser().parse(response.getEntity(String.class));
-	        for (int i = 0; i < servicesJson.size(); i++){
-	        	rooms.add(((JSONObject) new JSONParser().parse(servicesJson.get(i).toString())));
-	        }	
-	    } catch (Exception e) {
-	    	LogManager.error(e.getMessage());
-	    }
-		return rooms;
-	}
-	private static void checkStatus(int status){
-		if (status != 200) {
-			LogManager.error(errorMessage + status);
-        }
+		String url = conferenceRoomsURL.replace("[serviceId]", serviceId);
+		return ApiRequests.getAll(url);
 	}
 }

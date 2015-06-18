@@ -6,10 +6,18 @@
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="org.roommanager.utils.TestNGCustom"/>
   	</listeners>
-   	<test name="EmailServers">
+   	<test name="RegisterEmailServer">
+    	<classes>
+	      	<class name="org.roommanager.test.admin.emailserver.RegisterEmailServer" />
+    	</classes>
+  	</test>
+  	<test name="RemoveEmailServer">
     	<classes>
     		<class name="org.roommanager.test.admin.emailserver.RemoveEmailServer" />
-	      	<class name="org.roommanager.test.admin.emailserver.RegisterEmailServer" />
+    	</classes>
+  	</test>
+  	<test name="EnableImpersonation">
+    	<classes>
 	      	<class name="org.roommanager.test.admin.impersonation.EnableImpersonation" />
     	</classes>
   	</test>

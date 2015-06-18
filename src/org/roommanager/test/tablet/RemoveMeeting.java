@@ -18,9 +18,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
 public class RemoveMeeting {
+	
   private static WebDriver driver = null;
-  
-  String conferenceRoom = "RoomSM-07";
+  String conferenceRoom = "SM-Room20";
   String username = PropertiesReader.getUsername();
   String password = PropertiesReader.getPassword();
   String organizer = username;
@@ -31,21 +31,19 @@ public class RemoveMeeting {
   @Test
   public void removeSpecificMeeting() { 
 	  LogManager.startTestCase("Verify that is possible to remove a Meeting of a Room after provide valid credentials");
-	  String errorMessage = "The meeting was not removed"; 
-	  
+	  String errorMessage = "The meeting was not removed"; 	  
 	  driver.get(PropertiesReader.getRoomManagerTabletURL());
 	  
 	  SettingsPage settings = new SettingsPage(driver);
-	  settings.setSearchTextBox(conferenceRoom);
-	  settings.selectConferenceRoom();
+	  settings.selectConferenceRoom(conferenceRoom);
 	  HomePage home = settings.clickAcceptButton();
 	  SchedulerPage scheduler = home.clickScheduleButton();
-	  scheduler.clickOnMeetingBox();
+	  scheduler.clickOnMeetingBox(subject);	  
 	  CredentialsPage credentials = scheduler.clickRemoveButton();
-	  credentials.setPasswordTextBox(password);
+	  credentials.setPasswordTextBox(password);	  
 	  scheduler = credentials.clickOkButton();
 	  
-	  Assert.assertTrue(scheduler.existsMeeting(subject),errorMessage);
+	  Assert.assertFalse(scheduler.exitsSubjectOnTimeline(subject),errorMessage);
 	  LogManager.endTestCase();
   }
   @BeforeTest

@@ -1,26 +1,30 @@
 package org.roommanager.pages.tablet.scheduler;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.roommanager.model.tablet.scheduler.SchedulerModel;
 import org.roommanager.utils.LogManager;
 
-public class SchedulerPage {
+public class SchedulerPage extends RoomTimelinePage{
 	WebDriver driver;
 	By organizerTextBox = SchedulerModel.ORGANIZER_TEXTBOX.value;
 	By subjectTextBox = SchedulerModel.SUBJECT_TEXTBOX.value;
 	By attendeesTextBox = SchedulerModel.ATTENDEES_TEXTBOX.value;
 	By createButton = SchedulerModel.CREATE_BUTTON.value;
 	By confirmationMessage = SchedulerModel.CONFIRMATION_MESSAGE.value;
-	By meetingBox = SchedulerModel.MEETING_BOX.value;
 	By removeButton = SchedulerModel.REMOVE_BUTTON.value;
 	By updateButton = SchedulerModel.UPDATE_BUTTON.value;
 	By bodyTextArea = SchedulerModel.BODY_TEXTAREA.value;
-	By attendeesLabel = SchedulerModel.ATTENDEES_LABEL.value;
+	By attendeesList = SchedulerModel.ATTENDEES_LIST.value;
+	By attendeesText = SchedulerModel.ATTENDEES_TEXT.value;
 	
 	public SchedulerPage(WebDriver driver){
+		super(driver);
 		this.driver = driver;
 	}
 	
@@ -65,15 +69,8 @@ public class SchedulerPage {
 		return driver.findElement(confirmationMessage).getText();
 	}
 	
-	public String getSubjectOnMeetingBox(){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(meetingBox));
-		LogManager.info("Retrieve the subject on the meeting box");
-		return driver.findElement(meetingBox).getText();
-	}
-	
-	public void clickOnMeetingBox(){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(meetingBox));
-		driver.findElement(meetingBox).click();
+	public void clickOnMeetingBox(String subject){
+		searchSubjectOnTimeline(subject).click();
 		LogManager.info("Click on meeting's box");
 	}
 	
@@ -99,32 +96,31 @@ public class SchedulerPage {
 		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(bodyTextArea));
 		return driver.findElement(bodyTextArea).getText();
 	}
-	public String getMeetingAttendees(){
-		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(attendeesLabel));
-		return driver.findElement(attendeesLabel).getText();
+	private WebElement searchAttendee(String attendee){
+		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(attendeesList));
+		WebElement list = driver.findElement(attendeesList);
+		List<WebElement> attendees = list.findElements(attendeesText);
+		for(WebElement element : attendees){
+			if(element.getText().equals(attendee)){
+				LogManager.info("Attendee found: " + attendee);
+				return element;
+			}
+			
+		}
+		LogManager.info("Attendee not found: " + attendee);
+		return null;
 	}
+	
+	public boolean existAttendee(String attendee){
+		return searchAttendee(attendee) != null ? true : false;
+	}
+	
 	public String getMeetingOrganizer(){
 		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(organizerTextBox));
 		return driver.findElement(organizerTextBox).getText();
 	}
 	
-	/*public boolean checkMeetingUpdated(String subject, String body, String attendee){
-		if(subject.equals(getMeetingSubject())){
-			if(body.equals(getMeetingBody())){
-				if(attendee.equals(getMeetingAttendees())){
-					return true;
-				}
-			}
-		}
-		return false;
-	}*/
-	
-	public boolean existsMeeting(String subject){
-		try{
-			(new WebDriverWait(driver,20)).until(ExpectedConditions.invisibilityOfElementWithText(meetingBox, subject));
-			return true;
-		}catch(Exception e){
-			return false;
-		}
+	public void waitForConfirmationMessage(){
+		(new WebDriverWait(driver,60)).until(ExpectedConditions.invisibilityOfElementLocated(confirmationMessage));
 	}
 }

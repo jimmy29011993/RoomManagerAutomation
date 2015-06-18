@@ -10,10 +10,10 @@ public enum SchedulerModel {
 	BACK_BUTTON(By.xpath("//button")),
 	REMOVE_BUTTON(By.xpath("//button[2]")),
 	UPDATE_BUTTON(By.xpath("//button[3]")),
-	CONFIRMATION_MESSAGE(By.cssSelector("div.ng-binding.ng-scope")),
-	MEETING_BOX(By.cssSelector("span.item-text")),
+	CONFIRMATION_MESSAGE(By.xpath("//div[2]/div[2]/div[2]/div/div[2]/div")),
 	BODY_TEXTAREA(By.id("txtBody")),
-	ATTENDEES_LABEL(By.xpath("//li/span"));
+	ATTENDEES_LIST(By.xpath("//li")),
+	ATTENDEES_TEXT(By.xpath("span"));
 	
 	public final By value;	
 	private SchedulerModel(By value){

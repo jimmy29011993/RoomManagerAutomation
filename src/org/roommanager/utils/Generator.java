@@ -17,6 +17,7 @@ public class Generator {
 		calendar.add(Calendar.HOUR, differenceOfHours);
 		return dateFormat.format(calendar.getTime());
 	}
+	
 	public static String getEndDate(int duration){
 		Calendar calendar = new GregorianCalendar();
 		calendar.add(Calendar.HOUR, differenceOfHours);

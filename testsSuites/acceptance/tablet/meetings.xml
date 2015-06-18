@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <suite name="Acceptance-Meetings" parallel="false">
     <listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="org.roommanager.utils.TestNGCustom"/>
   	</listeners>
-   	<test name="Meetings">
+  	<test name="CreateMeeting">
     	<classes>
-    		<class name="org.roommanager.test.tablet.CreateMeeting" />
+	      	<class name="org.roommanager.test.tablet.CreateMeeting" />
+    	</classes>
+  	</test>
+   	<test name="RemoveSpecificMeeting">
+    	<classes>
 	      	<class name="org.roommanager.test.tablet.RemoveMeeting" />
+    	</classes>
+  	</test>
+  	<test name="UpdateSpecificMeeting">
+    	<classes>
 	      	<class name="org.roommanager.test.tablet.UpdateMeeting" />
     	</classes>
   	</test>

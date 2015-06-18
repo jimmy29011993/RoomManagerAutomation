@@ -1,7 +1,10 @@
 package org.roommanager.pages.tablet.settings;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.roommanager.model.tablet.settings.SettingsModel;
@@ -10,8 +13,8 @@ import org.roommanager.utils.LogManager;
 
 public class SettingsPage {
 	WebDriver driver;
-	
-	By conferenceRoom = SettingsModel.CONFERENCE_ROOM.value;
+	By conferenceRoomsList = SettingsModel.CONFERENCE_ROOMS_LIST.value;
+	By conferenceRoomText = SettingsModel.CONFERENCE_ROOM_TEXT.value;
 	By acceptButton = SettingsModel.ACCEPT_BUTTON.value;
 	By cancelButton = SettingsModel.CANCEL_BUTTON.value;
 	By searchTextBox = SettingsModel.SEARCH_TEXTBOX.value;
@@ -20,17 +23,24 @@ public class SettingsPage {
 		this.driver = driver;
 	}
 	
-	public void setSearchTextBox(String conferenceRoom){
+	public void setSearchTextBox(String room){
 		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(searchTextBox));
 		driver.findElement(searchTextBox).clear();
-		driver.findElement(searchTextBox).sendKeys(conferenceRoom);
-		LogManager.info("Set 'Search' text box: " + conferenceRoom);
+		driver.findElement(searchTextBox).sendKeys(room);
+		LogManager.info("Set 'Search' text box: " + room);
 	}
 	
-	public void selectConferenceRoom(){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(conferenceRoom));
-		driver.findElement(conferenceRoom).click();
-		LogManager.info("Select the conference room");
+	public void selectConferenceRoom(String room){
+		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(conferenceRoomsList));
+		List<WebElement> rooms = driver.findElements(conferenceRoomsList);
+		for(WebElement element: rooms){
+			if(element.findElement(conferenceRoomText).getText().equals(room)){
+				LogManager.info("Select room: " + room);
+				element.click();
+				break;
+			}
+		}
+		LogManager.info("Room not found: " + room);
 	}
 	
 	public HomePage clickAcceptButton(){

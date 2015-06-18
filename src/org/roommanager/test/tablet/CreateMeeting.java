@@ -20,8 +20,7 @@ import org.testng.annotations.AfterSuite;
 public class CreateMeeting {
 	
   private static WebDriver driver = null;
-  
-  String conferenceRoom = "RoomSM-07";
+  String conferenceRoom = "SM-Room15";
   String username = PropertiesReader.getUsername();
   String organizer = username;
   String subject = Generator.getRandomString();
@@ -29,16 +28,13 @@ public class CreateMeeting {
   String password = PropertiesReader.getPassword();
   
   @Test
-  public void createMeeting() {
+  public void createMeeting(){
 	  LogManager.startTestCase("Make sure that is possible to create a Meeting after entering all Scheduler form required fields");
 	  String errorMessage = "The meeting was not created"; 
-	  String expected = subject;
-	  
 	  driver.get(PropertiesReader.getRoomManagerTabletURL());
 	  
 	  SettingsPage settings = new SettingsPage(driver);
-	  settings.setSearchTextBox(conferenceRoom);
-	  settings.selectConferenceRoom();
+	  settings.selectConferenceRoom(conferenceRoom);
 	  HomePage home = settings.clickAcceptButton();
 	  SchedulerPage scheduler = home.clickScheduleButton();
 	  scheduler.setOrganizerTextBox(organizer);
@@ -49,9 +45,8 @@ public class CreateMeeting {
 	  credentials.setPasswordTextBox(password);
 	  scheduler = credentials.clickOkButton();
 	  
-	  Assert.assertEquals(scheduler.getSubjectOnMeetingBox(), expected,errorMessage);
+	  Assert.assertTrue(scheduler.exitsSubjectOnTimeline(subject) ,errorMessage);
 	  LogManager.endTestCase();
-	  
   }
   @BeforeTest
   public void beforeTest() {
@@ -72,5 +67,4 @@ public class CreateMeeting {
   public void afterSuite() {
 	  driver.quit();
   }
-
 }

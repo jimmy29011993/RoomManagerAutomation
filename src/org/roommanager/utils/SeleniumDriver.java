@@ -14,7 +14,7 @@ public class SeleniumDriver {
 		
 	}
 	public static WebDriver firefoxDriver(){
-		if(driver == null){
+		if(driver == null || driver.toString().contains("(null)")){
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 		}
@@ -22,7 +22,7 @@ public class SeleniumDriver {
 	}
 	
 	public static WebDriver chromeDriver(){
-		if(driver == null){
+		if(driver == null || driver.toString().contains("(null)")){
 			System.setProperty("webdriver.chrome.driver", PropertiesReader.getChromeDriverPath());
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();

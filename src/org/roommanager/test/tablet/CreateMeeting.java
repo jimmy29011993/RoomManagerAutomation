@@ -42,7 +42,6 @@ public class CreateMeeting {
 	  scheduler.setSubjectTextBox(subject);
 	  scheduler.setAttendeesTextBox(attendee);
 	  CredentialsPage credentials = scheduler.clickCreateButton();
-	  credentials.setUsernameTextBox(username);
 	  credentials.setPasswordTextBox(password);
 	  scheduler = credentials.clickOkButton();
 	  

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="BuildVerificationTest">
+	<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="org.roommanager.utils.TestNGCustom"/>
+  	</listeners>
     <suite-files>
         <suite-file path="testsSuites/acceptance/admin/emailServers.xml" />
         <suite-file path="testsSuites/acceptance/tablet/meetings.xml" />

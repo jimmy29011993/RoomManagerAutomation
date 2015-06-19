@@ -29,28 +29,28 @@ public class SchedulerPage extends RoomTimelinePage{
 	}
 	
 	public void setOrganizerTextBox(String organizer){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(organizerTextBox));
+		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(organizerTextBox));
 		driver.findElement(organizerTextBox).clear();
 		driver.findElement(organizerTextBox).sendKeys(organizer);
 		LogManager.info("Set 'Organizer' text box: " + organizer);
 	}
 	
 	public void setSubjectTextBox(String subject){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(subjectTextBox));
+		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(subjectTextBox));
 		driver.findElement(subjectTextBox).clear();
 		driver.findElement(subjectTextBox).sendKeys(subject);
 		LogManager.info("Set 'Subject' text box: " + subject);
 	}
 	
 	public void setAttendeesTextBox(String attendee){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(attendeesTextBox));
+		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(attendeesTextBox));
 		driver.findElement(attendeesTextBox).clear();
 		driver.findElement(attendeesTextBox).sendKeys(attendee + ";");
 		LogManager.info("Set 'Attendees' text box: " + attendee);
 	}
 	
 	public void setBodyTextArea(String body){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(bodyTextArea));
+		(new WebDriverWait(driver,20)).until(ExpectedConditions.presenceOfElementLocated(bodyTextArea));
 		driver.findElement(bodyTextArea).clear();
 		driver.findElement(bodyTextArea).sendKeys(body);
 		LogManager.info("Set 'Body' text area: " + body);
@@ -71,6 +71,7 @@ public class SchedulerPage extends RoomTimelinePage{
 	
 	public void clickOnMeetingBox(String subject){
 		searchSubjectOnTimeline(subject).click();
+		(new WebDriverWait(driver,20)).until(ExpectedConditions.presenceOfElementLocated(updateButton));
 		LogManager.info("Click on meeting's box");
 	}
 	
@@ -105,7 +106,6 @@ public class SchedulerPage extends RoomTimelinePage{
 				LogManager.info("Attendee found: " + attendee);
 				return element;
 			}
-			
 		}
 		LogManager.info("Attendee not found: " + attendee);
 		return null;
@@ -118,9 +118,5 @@ public class SchedulerPage extends RoomTimelinePage{
 	public String getMeetingOrganizer(){
 		(new WebDriverWait(driver,30)).until(ExpectedConditions.presenceOfElementLocated(organizerTextBox));
 		return driver.findElement(organizerTextBox).getText();
-	}
-	
-	public void waitForConfirmationMessage(){
-		(new WebDriverWait(driver,60)).until(ExpectedConditions.invisibilityOfElementLocated(confirmationMessage));
 	}
 }

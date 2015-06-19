@@ -28,7 +28,6 @@ public class RoomTimelinePage {
 				LogManager.info("Subject found: " + subject);
 				return element;
 			}
-			
 		}
 		LogManager.info("Subject not found: " + subject);
 		return null;

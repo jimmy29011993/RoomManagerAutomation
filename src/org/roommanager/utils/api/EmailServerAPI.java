@@ -3,6 +3,7 @@ package org.roommanager.utils.api;
 import java.util.ArrayList;
 
 import org.json.simple.JSONObject;
+import org.roommanager.utils.LogManager;
 import org.roommanager.utils.PropertiesReader;
 
 public class EmailServerAPI {
@@ -11,9 +12,9 @@ public class EmailServerAPI {
 	private static String servicesFilter = "?type=exchange";
 	private static String id = "_id";
 	
-	public static void removeEmailServer(String serviceId){
+	public static JSONObject removeEmailServer(String serviceId){
 		String url = serviceByIdURL.replace("[serviceId]", serviceId);
-		ApiRequests.delete(url);
+		return ApiRequests.delete(url);
 	}
 	
 	public static JSONObject getEmailServer(String serviceId){
@@ -35,7 +36,14 @@ public class EmailServerAPI {
 	public static void removeAllEmailServers(){
 		ArrayList<JSONObject> services = getEmailServers();
 		for(int i = 0; i < services.size(); i++){
-			removeEmailServer(services.get(i).get(id).toString());
+			String serviceId = services.get(i).get(id).toString();
+			
+			JSONObject response = removeEmailServer(serviceId);
+	        if(response == null)
+	        	LogManager.error("API> Email Server has not been  removed");
+	        else
+	        	LogManager.info("API> Email Server removed");
+
 		}
 	}
 	
@@ -48,7 +56,13 @@ public class EmailServerAPI {
 		JSONObject payload = new JSONObject();
 		payload.put("username", username);
 		payload.put("password", password);
-		payload.put("hostname", hostname);   
-	    return ApiRequests.post(url, payload);
+		payload.put("hostname", hostname);
+		
+		JSONObject response = ApiRequests.post(url, payload);
+        if(response == null)
+        	LogManager.error("API> Email Server has not been registered: " + hostname);
+        else
+        	LogManager.info("API> Email Server registered: " + hostname);
+        return response;
 	}
 }

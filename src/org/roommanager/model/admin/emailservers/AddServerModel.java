@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 
 
 public enum AddServerModel {
-	HOSTNAME_TEXTBOX(By.id("add-mailserver-hostname")),
-	USERNAME_TEXTBOX(By.id("add-mailserver-username")),
-	PASSWORD_TEXTBOX(By.id("add-mailserver-password")),
-	SAVE_BUTTON(By.cssSelector("div.modal-footer.ng-scope > button.btn.btn-primary"));
+	HOSTNAME_TEXTBOX(By.xpath("//div[4]/div/div/form/div/input")),
+	USERNAME_TEXTBOX(By.xpath("//div[4]/div/div/form/div[2]/input")),
+	PASSWORD_TEXTBOX(By.xpath("//div[4]/div/div/form/div[3]/input")),
+	SAVE_BUTTON(By.xpath("//div[4]/div/div/div[2]/button"));
 	
 	public final By value;
 	private AddServerModel(By value){

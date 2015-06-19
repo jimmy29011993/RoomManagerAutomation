@@ -1,14 +1,17 @@
 package org.roommanager.utils.api;
 
 import java.util.ArrayList;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.roommanager.utils.LogManager;
 import org.roommanager.utils.PropertiesReader;
 
 public class MeetingsAPI {
 	private static String meetingsURL = PropertiesReader.getRoomManagerBaseURL() + "/services/[serviceId]/rooms/[roomId]/meetings";
 	private static String meetingByIdURL = PropertiesReader.getRoomManagerBaseURL() + "/services/[serviceId]/rooms/[roomId]/meetings/[meetingId]";
 	private static String id = "_id";
+	private static String subject = "title";
 	private static String emailAddress = "emailAddress";
 
 	public static ArrayList<JSONObject> getAllMeetingsByRoom(String roomId,String serviceId){
@@ -37,9 +40,14 @@ public class MeetingsAPI {
         payload.put("location", roomName);
         payload.put("roomEmail", room.get(emailAddress));
         payload.put("resources", resources);
-        payload.put("attendees",null);  
+        payload.put("attendees",null);
         
-        return ApiRequests.postAuth(url, payload, username, password);
+        JSONObject response = ApiRequests.postAuth(url, payload, username, password);
+        if(response == null)
+        	LogManager.error("API> Meeting has not been created: " + subject);
+        else
+        	LogManager.info("API> Meeting created: " + subject);
+        return response;
 	}
 	
 	public static void removeAllMeetingsByRoomName(String roomName, String username, String password){
@@ -49,7 +57,11 @@ public class MeetingsAPI {
 		ArrayList<JSONObject> meetings = getAllMeetingsByRoom(roomId,serviceId);
 		for(int i = 0; i < meetings.size(); i++){
 			String meetingId = meetings.get(i).get(id).toString();
-			removeMeeting(roomId, meetingId, serviceId, username, password);
+			JSONObject response = removeMeeting(roomId, meetingId, serviceId, username, password);
+			if(response == null)
+				LogManager.error("API> Meeting has not been removed");
+			else
+				LogManager.info("API> Meeting removed: " + meetings.get(i).get(subject));
 		}
 	}
 }

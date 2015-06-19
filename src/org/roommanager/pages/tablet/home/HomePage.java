@@ -18,7 +18,7 @@ public class HomePage {
 	}
 	
 	public SchedulerPage clickScheduleButton(){
-		(new WebDriverWait(driver,20)).until(ExpectedConditions.presenceOfElementLocated(conferenceRoomLabel));
+		(new WebDriverWait(driver,20)).until(ExpectedConditions.presenceOfElementLocated(scheduleButton));
 		driver.findElement(scheduleButton).click();
 		LogManager.info("Click on 'Schedule' button on Home page");
 		return new SchedulerPage(driver);

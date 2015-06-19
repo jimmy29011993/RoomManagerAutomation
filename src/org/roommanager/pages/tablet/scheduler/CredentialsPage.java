@@ -21,7 +21,6 @@ public class CredentialsPage {
 	public void setUsernameTextBox(String username){
 		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(usernameTextBox));
 		driver.findElement(usernameTextBox).clear();
-		driver.findElement(usernameTextBox).clear();
 		driver.findElement(usernameTextBox).sendKeys(username);
 		LogManager.info("Set 'Username' text box: " + username);
 	}

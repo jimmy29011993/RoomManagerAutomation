@@ -15,7 +15,7 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
 public class ApiRequests {
-	private static String errorMessage = "Failed : HTTP error code : ";
+	private static String errorMessage = "Failed, HTTP error code : ";
 	
 	public static JSONObject delete(String url){
 		try {
@@ -67,7 +67,7 @@ public class ApiRequests {
 	        JSONArray servicesJson = (JSONArray) new JSONParser().parse(response.getEntity(String.class));
 	        for (int i = 0; i < servicesJson.size(); i++){
 	        	objects.add(((JSONObject) new JSONParser().parse(servicesJson.get(i).toString())));
-	        }	
+	        }
 	    } catch (Exception e) {
 	    	LogManager.error(e.getMessage());
 	    }
@@ -95,7 +95,6 @@ public class ApiRequests {
 	        ClientResponse response = webResource.accept(MediaType.APPLICATION_JSON).type(MediaType.APPLICATION_JSON).post(ClientResponse.class,payload.toJSONString());
 	        checkStatus(response.getStatus());
 	        return (JSONObject) new JSONParser().parse(response.getEntity(String.class));
-	        
 	    } catch (Exception e) {
 	    	LogManager.error(e.getMessage());
 	        return null;

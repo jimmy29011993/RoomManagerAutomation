@@ -1,18 +1,8 @@
 package org.roommanager.utils.api;
 
 import java.util.ArrayList;
-
-import javax.ws.rs.core.MediaType;
-
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.roommanager.utils.LogManager;
 import org.roommanager.utils.PropertiesReader;
-
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
 
 public class ConferenceRoomsAPI {
 	private static String conferenceRoomsURL = PropertiesReader.getRoomManagerBaseURL() + "/services/[serviceId]/rooms";

@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.roommanager.model.admin.impersonation.ImpersonationModel;
 import org.roommanager.pages.admin.common.MenuPage;
-import org.roommanager.pages.admin.emailservers.AddServerPage;
 import org.roommanager.utils.LogManager;
 
 public class ImpersonationPage extends MenuPage{

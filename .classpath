@@ -4,13 +4,11 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/Selenium/selenium-server-standalone-2.45.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/junit/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/reportng-1.1.4/guice-3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/reportng-1.1.4/reportng-1.1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/reportng-1.1.4/velocity-dep-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Documents/Monitor 4/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Downloads/gson-2.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/jersey-bundle-1.19.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/Desktop/installer/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/workspace/RoomManagerAutomation/lib/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/workspace/RoomManagerAutomation/lib/jersey-bundle-1.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/workspace/RoomManagerAutomation/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/workspace/RoomManagerAutomation/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/workspace/RoomManagerAutomation/lib/reportng-1.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jimmymaldonado/workspace/RoomManagerAutomation/lib/velocity-dep-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -21,7 +21,7 @@ public class SchedulerPage extends RoomTimelinePage{
 	By updateButton = SchedulerModel.UPDATE_BUTTON.value;
 	By bodyTextArea = SchedulerModel.BODY_TEXTAREA.value;
 	By attendeesList = SchedulerModel.ATTENDEES_LIST.value;
-	By attendeesText = SchedulerModel.ATTENDEES_TEXT.value;
+	By attendeeText = SchedulerModel.ATTENDEE_TEXT.value;
 	
 	public SchedulerPage(WebDriver driver){
 		super(driver);
@@ -99,7 +99,7 @@ public class SchedulerPage extends RoomTimelinePage{
 	private WebElement searchAttendee(String attendee){
 		(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(attendeesList));
 		WebElement list = driver.findElement(attendeesList);
-		List<WebElement> attendees = list.findElements(attendeesText);
+		List<WebElement> attendees = list.findElements(attendeeText);
 		for(WebElement element : attendees){
 			if(element.getText().equals(attendee)){
 				LogManager.info("Attendee found: " + attendee);

@@ -12,8 +12,8 @@ public enum SchedulerModel {
 	UPDATE_BUTTON(By.xpath("//button[3]")),
 	CONFIRMATION_MESSAGE(By.xpath("//div[2]/div[2]/div[2]/div/div[2]/div")),
 	BODY_TEXTAREA(By.id("txtBody")),
-	ATTENDEES_LIST(By.xpath("//li")),
-	ATTENDEES_TEXT(By.xpath("span"));
+	ATTENDEES_LIST(By.xpath("//ul[contains(@class,'list-inline')]")),
+	ATTENDEE_TEXT(By.xpath("li/span"));
 	
 	public final By value;	
 	private SchedulerModel(By value){

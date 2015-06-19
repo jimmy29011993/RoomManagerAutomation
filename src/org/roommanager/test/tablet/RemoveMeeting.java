@@ -9,6 +9,7 @@ import org.roommanager.utils.Generator;
 import org.roommanager.utils.LogManager;
 import org.roommanager.utils.PropertiesReader;
 import org.roommanager.utils.SeleniumDriver;
+import org.roommanager.utils.api.EmailServerAPI;
 import org.roommanager.utils.api.MeetingsAPI;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -60,6 +61,9 @@ public class RemoveMeeting {
   @BeforeSuite
   public void beforeSuite() {
 	  driver = SeleniumDriver.chromeDriver();
+	  if(EmailServerAPI.getEmailServer() == null){
+		  EmailServerAPI.registerEmailServer(username, password, PropertiesReader.getHostname());
+	  }
   }
 
   @AfterSuite

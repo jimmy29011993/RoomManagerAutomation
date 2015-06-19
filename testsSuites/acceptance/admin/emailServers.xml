@@ -6,6 +6,7 @@
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="org.roommanager.utils.TestNGCustom"/>
   	</listeners>
+   	<!-- 
    	<test name="RegisterEmailServer">
     	<classes>
 	      	<class name="org.roommanager.test.admin.emailserver.RegisterEmailServer" />
@@ -19,6 +20,22 @@
   	<test name="EnableImpersonation">
     	<classes>
 	      	<class name="org.roommanager.test.admin.impersonation.EnableImpersonation" />
+    	</classes>
+  	</test>
+  	 -->
+  	 <test name="CreateMeeting">
+    	<classes>
+	      	<class name="org.roommanager.test.tablet.CreateMeeting" />
+    	</classes>
+  	</test>
+   	<test name="RemoveSpecificMeeting">
+    	<classes>
+	      	<class name="org.roommanager.test.tablet.RemoveMeeting" />
+    	</classes>
+  	</test>
+  	<test name="UpdateSpecificMeeting">
+    	<classes>
+	      	<class name="org.roommanager.test.tablet.UpdateMeeting" />
     	</classes>
   	</test>
 </suite>

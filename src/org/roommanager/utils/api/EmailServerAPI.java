@@ -22,7 +22,10 @@ public class EmailServerAPI {
 	}
 	
 	public static JSONObject getEmailServer(){
-		return getEmailServers().get(0);
+		if(getEmailServers().size() > 0)
+			return getEmailServers().get(0);
+		else
+			return null;
 	}
 	
 	public static ArrayList<JSONObject> getEmailServers(){

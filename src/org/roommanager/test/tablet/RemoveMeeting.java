@@ -21,7 +21,7 @@ import org.testng.annotations.AfterSuite;
 public class RemoveMeeting {
 	
   private static WebDriver driver = null;
-  String conferenceRoom = "SM-Room20";
+  String conferenceRoom = "SM-Room7";
   String username = PropertiesReader.getUsername();
   String password = PropertiesReader.getPassword();
   String organizer = username;

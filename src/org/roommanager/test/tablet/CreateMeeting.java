@@ -21,7 +21,7 @@ import org.testng.annotations.AfterSuite;
 public class CreateMeeting {
 	
   private static WebDriver driver = null;
-  String conferenceRoom = "SM-Room15";
+  String conferenceRoom = "SM-Room7";
   String username = PropertiesReader.getUsername();
   String organizer = username;
   String subject = Generator.getRandomString();

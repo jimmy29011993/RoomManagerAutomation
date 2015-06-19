@@ -21,7 +21,7 @@ import org.testng.annotations.AfterSuite;
 public class UpdateMeeting {
 	
   private static WebDriver driver = null;
-  String conferenceRoom = "SM-Room5";
+  String conferenceRoom = "SM-Room7";
   String username = PropertiesReader.getUsername();
   String password = PropertiesReader.getPassword();
   String organizer = username;
